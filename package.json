@@ -1,4 +1,14 @@
 {
+  "name": "backend---weather-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "cors": "^2.8.5",
