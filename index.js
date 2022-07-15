@@ -1,15 +1,16 @@
 const express = require("express");
 const axios = require("axios");
-var cors = require("cors");
+const cors = require("cors");
+require("dotenv").config();
 
 const port = process.env.PORT || 8080;
 
 const app = express();
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
 
 app.get("/search", async (req, res) => {
   const cidade = req.query.cidade;
-  const key = "33c6cc5aa5f8494092e143121221806";
+  const key = process.env.SECRET_KEY;
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${cidade}&days=6&aqi=no&alerts=no`;
 
   await axios
